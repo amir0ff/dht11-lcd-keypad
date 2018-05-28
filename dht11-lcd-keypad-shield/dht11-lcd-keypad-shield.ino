@@ -5,7 +5,7 @@ LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 
 dht DHT;
 
-#define DHT11_PIN 7
+#define DHT11_PIN 2
 
 void setup()
 {
@@ -14,6 +14,7 @@ void setup()
 
 void loop()
 {
+  delay(5000);
   DHT.read11(DHT11_PIN);
   lcd.setCursor(0, 0);
   lcd.print("Temp: ");
@@ -24,7 +25,4 @@ void loop()
   lcd.print("Humidity: ");
   lcd.print(DHT.humidity);
   lcd.print("%");
-  DHT.read11(DHT11_PIN);
-  delay(1000);
 }
-
